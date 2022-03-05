@@ -22,7 +22,7 @@ express-handlebars
 express-session 
 connect-session-sequelize
 bcrypt
-
+a
 
   ## Installation
   
