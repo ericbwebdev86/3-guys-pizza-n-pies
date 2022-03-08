@@ -33,7 +33,7 @@ Review.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment'
+        modelName: 'review'
     }
 );
 module.exports = Review;

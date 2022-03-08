@@ -36,13 +36,13 @@ Customer.init(
         
     {
         hooks: {
-            async beforeCreate(newUserData) {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
+            async beforeCreate(newCustomerData) {
+                newCustomerData.password = await bcrypt.hash(newCustomerData.password, 10);
+                return newCustomerData;
             },
-            async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-                return updatedUserData;
+            async beforeUpdate(updatedCustomerData) {
+                updatedCustomerData.password = await bcrypt.hash(updatedCustomerData.password, 10);
+                return updatedCustomerData;
             }
         },
         //table configs
