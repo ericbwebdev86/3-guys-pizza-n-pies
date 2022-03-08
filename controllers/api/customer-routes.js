@@ -50,19 +50,19 @@ router.get('/:id', (req, res) => {
 });
 
 // create customer
+// expects {username: 'pizzaluvr69', password: 'S3cr3tS@uce'}
 router.post('/', (req, res) => {
-    // expects {username: 'pizzaluvr69', password: 'S3cr3tS@uce'}
     Customer.create({
         username: req.body.username,
         password: req.body.password
     })
-        .then(userData => {
+        .then(customerData => {
             req.session.save(() => {
-                req.session.user_id = userData.id;
-                req.session.username = userData.username;
+                req.session.user_id = customerData.id;
+                req.session.username = customerData.username;
                 req.session.loggedIn = true;
 
-                res.json(userData);
+                res.json(customerData);
             });
         })
         .catch(err => {
@@ -78,13 +78,13 @@ router.post('/login', (req, res) => {
         where: {
             username: req.body.username
         }
-    }).then(userData => {
-        if (!userData) {
-            res.status(400).json({ message: 'No user with that username!' });
+    }).then(customerData => {
+        if (!customerData) {
+            res.status(400).json({ message: 'No customer with that username!' });
             return;
         }
 
-        const validPassword = userData.checkPassword(req.body.password);
+        const validPassword = customerData.checkPassword(req.body.password);
 
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect password!' });
@@ -92,11 +92,11 @@ router.post('/login', (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.username = userData.username;
+            req.session.user_id = customerData.id;
+            req.session.username = customerData.username;
             req.session.loggedIn = true;
 
-            res.json({ user: userData, message: 'You are now logged in!' });
+            res.json({ user: customerData, message: 'You are now logged in!' });
         });
     });
 });
@@ -113,9 +113,8 @@ router.post('/logout', (req, res) => {
 });
 
 // update customer info - username, password
+// expects {username: 'SauceBauce', password: 'P!zzaTime'}
 router.put('/:id', (req, res) => {
-    // expects {username: 'SauceBauce', password: 'P!zzaTime'}
-
     Customer.update(
         {
             username: req.body.username,
@@ -127,12 +126,12 @@ router.put('/:id', (req, res) => {
                 id: req.params.id
             }
         })
-        .then(userData => {
-            if (!userData) {
-                res.status(404).json({ message: 'No user found with this id' });
+        .then(customerData => {
+            if (!customerData) {
+                res.status(404).json({ message: 'No customer found with this id' });
                 return;
             }
-            res.json(userData);
+            res.json(customerData);
         })
         .catch(err => {
             console.log(err);
@@ -147,12 +146,12 @@ router.delete('/:id', (req, res) => {
             id: req.params.id
         }
     })
-        .then(userData => {
-            if (!userData) {
-                res.status(404).json({ message: 'No user found with this id' });
+        .then(customerData => {
+            if (!customerData) {
+                res.status(404).json({ message: 'No customer found with this id' });
                 return;
             }
-            res.json(userData);
+            res.json(customerData);
         })
         .catch(err => {
             console.log(err);
