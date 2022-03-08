@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+const { Review } = require('../../models');
 
 // get all reviews
 router.get('/', (req, res) => {
