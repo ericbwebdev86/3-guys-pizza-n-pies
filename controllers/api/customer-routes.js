@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Customer, Order, Product, Review } = require('../../models');
 
 // get all customers - exclude password
