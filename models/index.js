@@ -6,7 +6,7 @@ const Address = require('./Address');
 const OrderProduct = require('./OrderProduct');
 
 //associations
-Review.hasOne(Customer, {
+Customer.hasOne(Review, {
     foreignKey: 'customer_id'
 });
 Review.belongsTo(Customer, {
