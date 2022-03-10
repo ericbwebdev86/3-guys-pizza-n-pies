@@ -21,6 +21,7 @@ Review.init(
      },
       customer_id: {
           type: DataTypes.INTEGER,
+          allowNull: false,
           references: {
               model: 'customer',
               key: 'id'
