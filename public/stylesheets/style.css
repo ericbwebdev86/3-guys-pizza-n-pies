@@ -1,0 +1,120 @@
+
+#body-index {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #8b2e00;
+  background-image: url('../images/nik-owens-40OJLYVWeeM-unsplash.jpg');
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto;
+  row-gap: 10px;
+}
+
+#body-register {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #8b2e00;
+  background-image: url('../images/fabrizio-pullara-vHRFraV4U00-unsplash.jpg');
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto;
+  row-gap: 10px;
+}
+
+#body-menu {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #8b2e00;
+  background-image: url('../images/louis-hansel-W75bFvPPrK8-unsplash.jpg');
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  display: grid;
+  grid-template-rows: auto minmax(0,1fr) auto;
+  row-gap: 10px;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.7);
+  
+}
+
+h1 {
+  color: white;
+}
+
+footer {
+  color: white;
+  text-align: center;
+}
+
+footer img {
+  align-items: center;
+  border-radius: 25%;
+}
+
+#logo {
+  border-radius: 25%;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: 15% 35% 35% 15%;
+}
+
+.menu-card {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.menu-page {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20%;
+}
+
+.card-label {
+  font-size: 36px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.margin-five {
+  margin: 5px;
+}
+
+.margin-top-bot-thirty {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.text-centered {
+  text-align: center;
+} 
+
+.card-img {
+  text-align: center;
+}
+
+.login-page {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
