@@ -20,7 +20,10 @@ Order.belongsToMany(Product, {
     through: OrderProduct,
     foreignKey: 'order_id'
 })
-Order.hasOne(Customer, {
+Customer.hasOne(Order, {
+    foreignKey: 'customer_id'
+});
+Order.belongsTo(Customer, {
     foreignKey: 'customer_id'
 });
 Customer.hasOne(Address, {
