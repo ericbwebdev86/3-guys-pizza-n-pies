@@ -3,6 +3,7 @@ const Product = require('./Product');
 const Order = require('./Order');
 const Review = require('./Review');
 const Address = require('./Address');
+const OrderProduct = require('./OrderProduct');
 
 //associations
 Review.hasOne(Customer, {
@@ -14,6 +15,14 @@ Review.belongsTo(Customer, {
 Order.hasMany(Product, {
     foreignKey: 'product_id'
 });
+Product.belongsToMany(Order, {
+    through: OrderProduct,
+    foreignKey: 'product_id'
+})
+Order.belongsToMany(Product, {
+    through: OrderProduct,
+    foreignKey: 'order_id'
+})
 Order.hasOne(Customer, {
     foreignKey: 'customer_id'
 });
@@ -28,4 +37,4 @@ Address.belongsTo(Customer, {
 })
 
 
-module.exports = { Customer, Product, Order, Review, Address };
+module.exports = { Customer, Product, Order, Review, Address, OrderProduct };
