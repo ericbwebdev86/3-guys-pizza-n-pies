@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { Customer, Order, Product, OrderProduct } = require('../../models');
 
 // get all orders
 router.get('/', (req, res) => {
@@ -8,7 +9,7 @@ router.get('/', (req, res) => {
             {
                 model: Product,
                 attributes: ['id', 'product_name', 'price'],
-                // through: OrderProducts,
+                // through: OrderProduct,
                 // as: 'ordered_products'
             },
             {
@@ -85,7 +86,7 @@ router.post('/', (req, res) => {
 //                         product_id,
 //                     };
 //                 });
-//                 return OrderedProducts.bulkCreate(orderedProductIdsArr);
+//                 return OrderProduct.bulkCreate(orderedProductIdsArr);
 //             }
 //         })
 //         .catch(err => {
