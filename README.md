@@ -32,7 +32,8 @@ a
   
 
   node server
-
+  npm run seed
+  npm start
  
 
   ## Credits
