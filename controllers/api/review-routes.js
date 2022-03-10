@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
 
 // update review
 // NEEDS withAuth
-// expects {"review_text": "I can't decide which I like better: pizza pies or cream pies"}
+// expects {"review_text": "food good"}
 router.put('/:id', (req, res) => {
     Review.update(
         {

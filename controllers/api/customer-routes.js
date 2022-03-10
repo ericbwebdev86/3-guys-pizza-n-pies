@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
 
 // post login - session save
 router.post('/login', (req, res) => {
-    // expects {username: 'pizzaluvr69', password: 'S3cr3tS@uce'}
+    // expects {"username": "pizzaluvr69", "password": "S3cr3tS@uce"}
     Customer.findOne({
         where: {
             username: req.body.username
@@ -112,7 +112,7 @@ router.post('/logout', (req, res) => {
 });
 
 // update customer info - username, password
-// expects {username: 'SauceBauce', password: 'P!zzaTime'}
+// expects {"username": "SauceBauce", "password": "P!zzaTime"}
 router.put('/:id', (req, res) => {
     Customer.update(
         {

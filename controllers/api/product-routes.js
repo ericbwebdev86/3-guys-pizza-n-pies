@@ -26,6 +26,7 @@ router.get('/:id', (req, res) => {
 });
 
 // create product
+// expects {"product_name":"Buffalo Chicken Bacon Pizza", "price":"17.99"}
 router.post('/', (req, res) => {
     Product.create({
         product_name: req.body.product_name,
@@ -39,6 +40,7 @@ router.post('/', (req, res) => {
 });
 
 // update product
+// expects {"product_name":"Buffalo Chicken Bacon Mac n Cheese Pizza", "price":"19.99"}
 router.put('/:id', (req, res) => {
     Product.update(req.body,
         {

@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Product,
-                attributes: ['id', 'product_name', 'price']
+                attributes: ['id', 'product_name', 'price'],
+                // through: OrderProducts,
+                // as: 'ordered_products'
             },
             {
                 model: Customer,
@@ -67,8 +69,34 @@ router.post('/', (req, res) => {
         });
 });
 
+// req.body should look like this...
+// {
+//     total: 123,
+//     order_status: "Out for Delivery",
+//     orderedProductIds: [1, 2, 3, 4]
+// }
+// router.post('/', (req, res) => {
+//     Order.create(req.body)
+//         .then((order) => {
+//             if(req.body.orderedProductIds.length) {
+//                 const orderedProductIdsArr = req.body.orderedProductIds.map((product_id) => {
+//                     return {
+//                         order_id: order.id,
+//                         product_id,
+//                     };
+//                 });
+//                 return OrderedProducts.bulkCreate(orderedProductIdsArr);
+//             }
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
+
 // update order
 // NEEDS withAuth
+// expects {"total":52.19, "order_status":"Pending"}
 router.put('/:id', (req, res) => {
     Order.update({
         total: req.body.total,
