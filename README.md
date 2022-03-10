@@ -1,4 +1,4 @@
-# 5-guys-pizza-n-pies  ![Github license](https://img.shields.io/badge/license-MIT-green.svg)
+# 3-Guys-Pizza-n-Pies  ![Github license](https://img.shields.io/badge/license-MIT-green.svg)
 
 
   ## Table of Contents
