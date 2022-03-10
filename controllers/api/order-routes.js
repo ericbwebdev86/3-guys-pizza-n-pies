@@ -9,8 +9,7 @@ router.get('/', (req, res) => {
             {
                 model: Product,
                 attributes: ['id', 'product_name', 'price'],
-                // through: OrderProduct,
-                // as: 'ordered_products'
+                through: OrderProduct,
             },
             {
                 model: Customer,
@@ -26,7 +25,7 @@ router.get('/', (req, res) => {
 });
 
 // get one order
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
     Order.findOne({
         where: {
             id: req.params.id
@@ -35,7 +34,8 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Product,
-                attributes: ['id', 'product_name', 'price']
+                attributes: ['id', 'product_name', 'price'],
+                through: OrderProduct,
             },
             {
                 model: Customer,
@@ -58,37 +58,36 @@ router.get('/', (req, res) => {
 
 // create order
 // NEEDS withAuth
-router.post('/', (req, res) => {
-    Order.create({
-        total: req.body.total,
-        order_status: req.body.order_status
-    })
-        .then(orderData => res.json(orderData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-
 // req.body should look like this...
 // {
 //     total: 123,
 //     order_status: "Out for Delivery",
 //     orderedProductIds: [1, 2, 3, 4]
 // }
+router.post('/', (req, res) => {
+    Order.create(req.body)
+        .then((order) => {
+            if(req.body.orderedProductIds.length) {
+                const orderedProductIdsArr = req.body.orderedProductIds.map((product_id) => {
+                    return {
+                        order_id: order.id,
+                        product_id,
+                    };
+                });
+                return OrderProduct.bulkCreate(orderedProductIdsArr);
+            }
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 // router.post('/', (req, res) => {
-//     Order.create(req.body)
-//         .then((order) => {
-//             if(req.body.orderedProductIds.length) {
-//                 const orderedProductIdsArr = req.body.orderedProductIds.map((product_id) => {
-//                     return {
-//                         order_id: order.id,
-//                         product_id,
-//                     };
-//                 });
-//                 return OrderProduct.bulkCreate(orderedProductIdsArr);
-//             }
-//         })
+//     Order.create({
+//         total: req.body.total,
+//         order_status: req.body.order_status
+//     })
+//         .then(orderData => res.json(orderData))
 //         .catch(err => {
 //             console.log(err);
 //             res.status(500).json(err);
@@ -99,9 +98,15 @@ router.post('/', (req, res) => {
 // NEEDS withAuth
 // expects {"total":52.19, "order_status":"Pending"}
 router.put('/:id', (req, res) => {
-    Order.update({
+    Order.update(
+    {
         total: req.body.total,
         order_status: req.body.order_status
+    },
+    {
+        where: {
+            id: req.params.id
+        }
     })
         .then(orderData => res.json(orderData))
         .catch(err => {

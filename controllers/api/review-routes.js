@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Review.update(
         {
-            review_text: req.body.review_text
+            review_text: req.body.review_text,
         },
         {
             where: {
