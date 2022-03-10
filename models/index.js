@@ -12,9 +12,6 @@ Customer.hasOne(Review, {
 Review.belongsTo(Customer, {
     foreignKey: 'customer_id',
 });
-Order.hasMany(Product, {
-    foreignKey: 'product_id'
-});
 Product.belongsToMany(Order, {
     through: OrderProduct,
     foreignKey: 'product_id'
@@ -26,15 +23,15 @@ Order.belongsToMany(Product, {
 Order.hasOne(Customer, {
     foreignKey: 'customer_id'
 });
-Order.hasOne(Address, {
-    foreignKey: 'address_id'
-})
+Customer.hasOne(Address, {
+    foreignKey: 'customer_id'
+});
 Address.hasOne(Customer, {
     foreignKey: 'customer_id'
 });
 Address.belongsTo(Customer, {
     foreignKey: 'customer_id'
-})
+});
 
 
 module.exports = { Customer, Product, Order, Review, Address, OrderProduct };
