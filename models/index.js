@@ -28,7 +28,7 @@ Customer.hasOne(Address, {
 });
 Address.belongsTo(Customer, {
     foreignKey: 'customer_id'
-})
+});
 
 
 module.exports = { Customer, Product, Order, Review, Address, OrderProduct };
