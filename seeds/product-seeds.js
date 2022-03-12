@@ -4,31 +4,95 @@ const { Product } = require('../models');
 
 const productData = [
   {
-    product_name: '16" Cheese Pizza',
+    product_name: '12" Cheese Pizza',
+    price: 11.99,
+  },
+  {
+    product_name: '14" Cheese Pizza',
     price: 12.99,
   },
   {
-    product_name: '16" Pepperoni Pizza',
+    product_name: '16" Cheese Pizza',
     price: 13.99,
+  },
+  {
+    product_name: '12" Pepperoni King',
+    price: 11.99,
+  },
+  {
+    product_name: '14" Pepperoni King',
+    price: 12.99,
+  },
+  {
+    product_name: '16" Pepperoni King',
+    price: 13.99,
+  },
+  {
+    product_name: '12" Sausage Pizza',
+    price: 11.99,
+  },
+  {
+    product_name: '14" Sausage Pizza',
+    price: 12.99,
   },
   {
     product_name: '16" Sausage Pizza',
     price: 13.99,
   },
   {
-    product_name: '16" Supreme Pizza',
+    product_name: '12" Supreme',
+    price: 12.99,
+  },
+  {
+    product_name: '14" Supreme',
+    price: 13.99,
+  },
+  {
+    product_name: '16" Supreme',
     price: 14.99,
   },
   {
-    product_name: '16" Meat Lovers Pizza',
+    product_name: '12" The Butcher',
+    price: 12.99,
+  },
+  {
+    product_name: '14" The Butcher',
+    price: 13.99,
+  },
+  {
+    product_name: '16" The Butcher',
     price: 14.99,
+  },
+  {
+    product_name: '12" Hawaiian Pizza',
+    price: 11.99,
+  },
+  {
+    product_name: '14" Hawaiian Pizza',
+    price: 12.99,
   },
   {
     product_name: '16" Hawaiian Pizza',
     price: 13.99,
   },
   {
-    product_name: '16" BBQ Pizza',
+    product_name: '12" BBQ Chicken Pizza',
+    price: 12.99,
+  },
+  {
+    product_name: '14" BBQ Chicken Pizza',
+    price: 13.99,
+  },
+  {
+    product_name: '16" BBQ Chicken Pizza',
+    price: 14.99,
+  },
+  {
+    product_name: '12" Buffalo Chicken Pizza',
+    price: 12.99,
+  },
+  {
+    product_name: '14" Buffalo Chicken Pizza',
     price: 13.99,
   },
   {
