@@ -1,59 +1,50 @@
 
-#body-index {
-  min-height: 100vh;
-  margin: 0;
+.background-one {
   background-color: #8b2e00;
   background-image: url('../images/nik-owens-40OJLYVWeeM-unsplash.jpg');
-
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  color: white;
-  display: grid;
-  grid-template-rows: auto minmax(0,1fr) auto;
-  row-gap: 10px;
 }
 
-#body-register {
-  min-height: 100vh;
-  margin: 0;
+.background-two {
   background-color: #8b2e00;
   background-image: url('../images/fabrizio-pullara-vHRFraV4U00-unsplash.jpg');
-
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  color: white;
-  display: grid;
-  grid-template-rows: auto minmax(0,1fr) auto;
-  row-gap: 10px;
 }
 
-#body-menu {
-  min-height: 100vh;
-  margin: 0;
+.background-three {
   background-color: #8b2e00;
   background-image: url('../images/louis-hansel-W75bFvPPrK8-unsplash.jpg');
-
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+
+#body-main {
+  min-height: 100vh;
+  margin: 0;
   color: white;
   display: grid;
   grid-template-rows: auto minmax(0,1fr) auto;
-  row-gap: 10px;
+  row-gap: 20px;
 }
 
 .navbar {
   background-color: rgba(0, 0, 0, 0.7);
-  
 }
 
 h1 {
   color: white;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 footer {
@@ -100,9 +91,8 @@ footer img {
   margin: 5px;
 }
 
-.margin-top-bot-thirty {
-  margin-top: 30px;
-  margin-bottom: 30px;
+.margin-thirty {
+  margin: 30px;
 }
 
 .text-centered {
@@ -118,3 +108,85 @@ footer img {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }
+
+.text-align-right {
+text-align: right;
+}
+
+.form-background {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.no-wrap {
+  flex-wrap: nowrap
+}
+
+.cc-field {
+  background-color: rgb(36, 36, 36, 0.7);
+}
+
+
+
+
+
+.input-group {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+}
+
+.input-group input {
+  position: relative;
+  height: 80px;
+  margin-left: 1px;
+  margin-right: 1px;
+  border-radius: 6px;
+  padding-top: 30px;
+  padding-left: 25px
+}
+
+.input-group label {
+  position: absolute;
+  height: 24px;
+  background: none;
+  border-radius: 6px;
+  line-height: 48px;
+  font-size: 15px;
+  width: 100%;
+  font-weight: 120;
+  padding-left: 25px;
+}
+
+.form-card {
+  margin-left: 20px;
+  margin-right: 20px
+}
+
+.form-card input,
+.form-card textarea {
+    padding: 10px 15px 5px 15px;
+    border: none;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: arial;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+    -moz-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    -webkit-box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    box-shadow: 0px 0px 0px 1.5px skyblue !important;
+    font-weight: bold;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+
+
