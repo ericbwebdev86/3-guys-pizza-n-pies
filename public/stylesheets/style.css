@@ -91,6 +91,10 @@ footer img {
   margin: 5px;
 }
 
+.margin-fifteen {
+  margin: 15px;
+}
+
 .margin-thirty {
   margin: 30px;
 }
@@ -115,6 +119,7 @@ text-align: right;
 
 .form-background {
   background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
 }
 
 .no-wrap {
