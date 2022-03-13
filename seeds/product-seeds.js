@@ -144,6 +144,30 @@ const productData = [
     price: 1.49,
   },
   {
+    product_name: 'Key Lime Pie',
+    price: 10.99,
+  },
+  {
+    product_name: 'Key Lime Pie Slice',
+    price: 1.49,
+  },
+  {
+    product_name: 'French Silk Pie',
+    price: 10.99,
+  },
+  {
+    product_name: 'Franch Silk Pie Slice',
+    price: 1.49,
+  },
+  {
+    product_name: 'Pie of the week',
+    price: 10.99,
+  },
+  {
+    product_name: 'Pie of the week Slice',
+    price: 1.49,
+  },
+  {
     product_name: 'Extra Cheese',
     price: 1.99,
   },

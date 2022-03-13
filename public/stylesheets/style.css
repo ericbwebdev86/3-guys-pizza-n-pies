@@ -125,6 +125,18 @@ text-align: right;
   background-color: rgb(36, 36, 36, 0.7);
 }
 
+.order-start-btn {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  background-color: rgba(65, 65, 65, 0.7);
+}
+.order-nav-btn {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  background-color: rgba(65, 65, 65, 0.7);
+}
 
 
 
