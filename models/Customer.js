@@ -31,7 +31,30 @@ Customer.init(
              //password must be at least 8 charcters long
              len: [8]
          }
-     }  
+     },
+     street_address: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    city_address: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    state_address: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true
+    },
+    zip_address: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        unique: true,
+        validate: {
+            len: [5]
+        }
+    },  
     },
         
     {

@@ -36,13 +36,6 @@ Order.init(
                 model: 'product',
                 key: 'id'
             }
-        },
-        address_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'address',
-                key: 'id'
-            }
         }
     },   
     {
