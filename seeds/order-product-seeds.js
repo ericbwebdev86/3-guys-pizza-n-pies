@@ -19,11 +19,11 @@ const orderProductData = [
     },
     {
         order_id: 2,
-        product_id: 4
+        product_id: 5
     },
     {
         order_id: 2,
-        product_id: 4
+        product_id: 6
     },
     {
         order_id: 3,
@@ -42,3 +42,7 @@ const orderProductData = [
         product_id: 27
     },
 ]
+
+const seedOrderProduct = () => OrderProduct.bulkCreate(orderProductData);
+
+module.exports = seedOrderProduct;
