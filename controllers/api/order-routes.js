@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
             },
             {
                 model: Customer,
-                attributes: ['username']
+                attributes: { exclude: ['password'] }
             }
         ]
     })
@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
             },
             {
                 model: Customer,
-                attributes: ['username']
+                attributes: { exclude: ['password'] }
             }
         ]
     })
