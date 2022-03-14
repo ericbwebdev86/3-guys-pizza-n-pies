@@ -1,7 +1,10 @@
 async function signupHandler(event) {
     event.preventDefault();
-    const email = document.querySelector('#inputEmail4').value.trim();
-    const password = document.querySelector('#inputPassword4').value.trim();
+    const email = document.querySelector('#inputEmail').value.trim();
+    const password = document.querySelector('#inputPassword').value.trim();
+    const firstName = document.querySelector('#inputFirstName').value.trim();
+    const lastName = document.querySelector('#inputLastName').value.trim();
+    const username = document.querySelector('#inputUsername').value.trim();
     const address = document.querySelector('#inputAddress').value;
     const addressLine2 = document.querySelector('#inputAddress2').value;
     const city = document.querySelector('#inputCity').value;
@@ -13,6 +16,8 @@ async function signupHandler(event) {
             method: 'post',
             body: JSON.stringify({
                 email,
+                firstName,
+                lastName,
                 password,
                 address,
                 addressLine2,

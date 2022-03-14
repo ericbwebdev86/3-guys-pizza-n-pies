@@ -19,7 +19,7 @@ Customer.init(
             primaryKey: true,
             autoIncrement: true
         },
-        username: {
+        email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
@@ -32,25 +32,33 @@ Customer.init(
                 len: [8]
             }
         },
+        first_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        last_name: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         street_address: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
+        },
+        street_address2: {
+            type: DataTypes.STRING,
+            allowNull: false,
         },
         city_address: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
         state_address: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
         zip_address: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            unique: true,
             validate: {
                 len: [5]
             }
