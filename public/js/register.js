@@ -11,7 +11,7 @@ async function signupHandler(event) {
     const zip_address = document.querySelector('#inputZip').value;
 
     if (email && password && street_address && street_address2 && city_address && state_address && zip_address) {
-        const response2 = await fetch('/api/customers', {
+        const response = await fetch('/api/customers', {
             method: 'post',
             body: JSON.stringify({
                 email,
@@ -27,11 +27,11 @@ async function signupHandler(event) {
 
             headers: { 'Content-Type': 'application/json' }
         });
-        if (response2.ok) {
+        if (response.ok) {
             console.log('success');
             document.location.replace('/')
         } else {
-            alert(response2.statusText);
+            alert(response.statusText);
         }
     }
 }
