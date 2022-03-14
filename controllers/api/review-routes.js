@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         include: [
             {
                 model: Customer,
-                attributes: ['username']
+                attributes: ['first_name']
             }
         ]
     })

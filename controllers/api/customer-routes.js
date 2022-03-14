@@ -52,8 +52,15 @@ router.get('/:id', (req, res) => {
 // expects {username: 'pizzaluvr69', password: 'S3cr3tS@uce'}
 router.post('/', (req, res) => {
     Customer.create({
-        username: req.body.username,
-        password: req.body.password
+        email: req.body.email,
+        password: req.body.password,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        street_address: req.body.street_address,
+        street_address_2: req.body.street_address_2,
+        city_address: req.body.city_address,
+        state_address: req.body.state_address,
+        zip_address: req.body.zip_address
     })
         .then(customerData => {
             req.session.save(() => {
