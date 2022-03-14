@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const { Customer, Order, Product, OrderProduct } = require('../../models');
 
 // get all orders
@@ -57,14 +58,13 @@ router.get('/:id', (req, res) => {
 });
 
 // create order
-// NEEDS withAuth
 // expects
 // {
 //     total: 123,
 //     order_status: "Out for Delivery",
 //     orderedProductIds: [1, 2, 3, 4]
 // }
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Order.create(
         req.body,
         {
@@ -90,9 +90,8 @@ router.post('/', (req, res) => {
 });
 
 // update order
-// NEEDS withAuth
 // expects {"total":52.19, "order_status":"Pending"}
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Order.update(
         {
             total: req.body.total,
@@ -111,7 +110,7 @@ router.put('/:id', (req, res) => {
 });
 
 // delete order
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Order.destroy({
         where: {
             id: req.params.id

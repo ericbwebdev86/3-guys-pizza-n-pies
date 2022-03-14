@@ -1,9 +1,21 @@
 const router = require('express').Router();
-const { Review } = require('../models');
+const { Review, Customer } = require('../models');
 
 // route to homepage view
 router.get('/', (req, res) => {
-    Review.findAll()
+    Review.findAll({
+        attributes: [
+            'id',
+            'review_text',
+            'created_at'
+        ],
+        include: [
+            {
+                model: Customer,
+                attributes: ['username']
+            }
+        ]
+    })
     .then(reviewData => {
         const reviews = reviewData.map(review => review.get({ plain: true }));
 
