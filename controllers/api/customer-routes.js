@@ -49,7 +49,19 @@ router.get('/:id', (req, res) => {
 });
 
 // create customer
-// expects {username: 'pizzaluvr69', password: 'S3cr3tS@uce'}
+/* expects
+{
+    "email": "reg.fancy@gmail.com",
+    "password": "test1234",
+    "first_name": "Reginald",
+    "last_name": "Fancypants",
+    "street_address": "123 Easy Street",
+    "street_address2": "Suite A",
+    "city_address": "Funkytown",
+    "state_address": "North Carolina",
+    "zip_address": "12345",
+}
+*/
 router.post('/', (req, res) => {
     Customer.create({
         email: req.body.email,
@@ -65,7 +77,7 @@ router.post('/', (req, res) => {
         .then(customerData => {
             req.session.save(() => {
                 req.session.user_id = customerData.id;
-                req.session.username = customerData.username;
+                req.session.email = customerData.email;
                 req.session.loggedIn = true;
 
                 res.json(customerData);
@@ -79,14 +91,14 @@ router.post('/', (req, res) => {
 
 // post login - session save
 router.post('/login', (req, res) => {
-    // expects {"username": "pizzaluvr69", "password": "S3cr3tS@uce"}
+    // expects {"email": "reg.fancy@gmail.com", "password": "test1234"}
     Customer.findOne({
         where: {
-            username: req.body.username
+            email: req.body.email
         }
     }).then(customerData => {
         if (!customerData) {
-            res.status(400).json({ message: 'No customer with that username!' });
+            res.status(400).json({ message: 'No customer with that email!' });
             return;
         }
 
@@ -99,7 +111,7 @@ router.post('/login', (req, res) => {
 
         req.session.save(() => {
             req.session.customer_id = customerData.id;
-            req.session.username = customerData.username;
+            req.session.email = customerData.email;
             req.session.loggedIn = true;
 
             res.json({ user: customerData, message: 'You are now logged in!' });
@@ -118,12 +130,12 @@ router.post('/logout', (req, res) => {
     }
 });
 
-// update customer info - username, password
-// expects {"username": "SauceBauce", "password": "P!zzaTime"}
+// update customer info - email, password
+// expects {"email": "reg.fancy@gmail.com", "password": "test1234"}
 router.put('/:id', (req, res) => {
     Customer.update(
         {
-            username: req.body.username,
+            email: req.body.email,
             password: req.body.password
         },
         {
