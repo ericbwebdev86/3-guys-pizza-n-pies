@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         street_address: req.body.street_address,
-        street_address_2: req.body.street_address_2,
+        street_address2: req.body.street_address2,
         city_address: req.body.city_address,
         state_address: req.body.state_address,
         zip_address: req.body.zip_address

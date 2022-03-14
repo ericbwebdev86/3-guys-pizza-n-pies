@@ -2,28 +2,27 @@ async function signupHandler(event) {
     event.preventDefault();
     const email = document.querySelector('#inputEmail').value.trim();
     const password = document.querySelector('#inputPassword').value.trim();
-    const firstName = document.querySelector('#inputFirstName').value.trim();
-    const lastName = document.querySelector('#inputLastName').value.trim();
-    const username = document.querySelector('#inputUsername').value.trim();
-    const address = document.querySelector('#inputAddress').value;
-    const addressLine2 = document.querySelector('#inputAddress2').value;
-    const city = document.querySelector('#inputCity').value;
-    const state = document.querySelector('#inputState').value;
-    const zip = document.querySelector('#inputZip').value;
+    const first_name = document.querySelector('#inputFirstName').value.trim();
+    const last_name = document.querySelector('#inputLastName').value.trim();
+    const street_address = document.querySelector('#inputAddress').value;
+    const street_address2 = document.querySelector('#inputAddress2').value;
+    const city_address = document.querySelector('#inputCity').value;
+    const state_address = document.querySelector('#inputState').value;
+    const zip_address = document.querySelector('#inputZip').value;
 
-    if (email && password && address && addressLine2 && city && state && zip) {
-        const response2 = await fetch('/api/customer', {
+    if (email && password && street_address && street_address2 && city_address && state_address && zip_address) {
+        const response2 = await fetch('/api/customers', {
             method: 'post',
             body: JSON.stringify({
                 email,
-                firstName,
-                lastName,
+                first_name,
+                last_name,
                 password,
-                address,
-                addressLine2,
-                city,
-                state,
-                zip
+                street_address,
+                street_address2,
+                city_address,
+                state_address,
+                zip_address
             }),
 
             headers: { 'Content-Type': 'application/json' }
