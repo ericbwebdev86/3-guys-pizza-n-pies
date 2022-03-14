@@ -39,6 +39,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// route to register view
+router.get('/register', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('register');
+});
+
 // route to menu view
 router.get('/menu', (req, res) => {
     res.render('menu', {
