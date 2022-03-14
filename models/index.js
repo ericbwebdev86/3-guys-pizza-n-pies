@@ -25,9 +25,6 @@ Customer.hasOne(Order, {
 Order.belongsTo(Customer, {
     foreignKey: 'customer_id'
 });
-Customer.hasOne(Address, {
-    foreignKey: 'customer_id'
-});
 
 
 
