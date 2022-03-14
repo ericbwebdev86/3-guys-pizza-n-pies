@@ -59,7 +59,7 @@ router.get('/:id', (req, res) => {
     "street_address2": "Suite A",
     "city_address": "Funkytown",
     "state_address": "North Carolina",
-    "zip_address": "12345",
+    "zip_address": "12345"
 }
 */
 router.post('/', (req, res) => {
@@ -76,7 +76,7 @@ router.post('/', (req, res) => {
     })
         .then(customerData => {
             req.session.save(() => {
-                req.session.user_id = customerData.id;
+                req.session.customer_id = customerData.id;
                 req.session.email = customerData.email;
                 req.session.loggedIn = true;
 

@@ -46,7 +46,7 @@ Customer.init(
         },
         street_address2: {
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
         },
         city_address: {
             type: DataTypes.STRING,

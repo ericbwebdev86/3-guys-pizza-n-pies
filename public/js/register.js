@@ -10,7 +10,7 @@ async function signupHandler(event) {
     const state_address = document.querySelector('#inputState').value;
     const zip_address = document.querySelector('#inputZip').value;
 
-    if (email && password && street_address && street_address2 && city_address && state_address && zip_address) {
+    if (email && password && street_address && city_address && state_address && zip_address) {
         const response = await fetch('/api/customers', {
             method: 'post',
             body: JSON.stringify({
