@@ -1,6 +1,5 @@
 const seedProducts = require('./product-seeds');
 const seedCustomers = require('./customer-seeds');
-const seedAddresses = require('./address-seeds');
 const seedReviews = require('./review-seeds');
 const seedOrders = require('./order-seeds');
 
@@ -14,9 +13,6 @@ const seedAll = async () => {
 
   await seedCustomers();
   console.log('\n----- CUSTOMERS SEEDED -----\n');
-
-  await seedAddresses();
-  console.log('\n----- ADDRESSES SEEDED -----\n');
 
   await seedReviews();
   console.log('\n----- REVIEWS SEEDED -----\n');
