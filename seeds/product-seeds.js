@@ -16,15 +16,15 @@ const productData = [
     price: 13.99,
   },
   {
-    product_name: '12" Pepperoni King',
+    product_name: '12" Pepperoni King Pizza',
     price: 11.99,
   },
   {
-    product_name: '14" Pepperoni King',
+    product_name: '14" Pepperoni King Pizza',
     price: 12.99,
   },
   {
-    product_name: '16" Pepperoni King',
+    product_name: '16" Pepperoni King Pizza',
     price: 13.99,
   },
   {
@@ -40,27 +40,27 @@ const productData = [
     price: 13.99,
   },
   {
-    product_name: '12" Supreme',
+    product_name: '12" Supreme Pizza',
     price: 12.99,
   },
   {
-    product_name: '14" Supreme',
+    product_name: '14" Supreme Pizza',
     price: 13.99,
   },
   {
-    product_name: '16" Supreme',
+    product_name: '16" Supreme Pizza',
     price: 14.99,
   },
   {
-    product_name: '12" The Butcher',
+    product_name: '12" The Butcher Pizza',
     price: 12.99,
   },
   {
-    product_name: '14" The Butcher',
+    product_name: '14" The Butcher Pizza',
     price: 13.99,
   },
   {
-    product_name: '16" The Butcher',
+    product_name: '16" The Butcher Pizza',
     price: 14.99,
   },
   {
