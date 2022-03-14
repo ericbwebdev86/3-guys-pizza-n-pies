@@ -1,0 +1,42 @@
+<div>
+    3 Guys combines the freshest ingredients with our traditional Sicilian-Italian family recipes to serve the
+    finest in Italian cuisine.
+</div>
+
+<div class="container">
+    {{#if loggedIn}}
+    <div class="row margin-thirty justify-content-center">
+        <div class="col form-background">
+            <form class="margin-fifteen comment-form">
+                <div class="form-group">
+                    <label for="commentID">Enter a Review</label>
+                    <input type="text" name="commentID" class="form-control" id="commentID"
+                        placeholder="Let us know how we are doing.">
+                </div>
+                <div class="text-centered">
+                    <button type="submit" class="btn btn-dark">Submit Comment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="container flex justify-content-center">
+        {{#if reviews.length}}
+        {{#each reviews as |review|}}
+        {{> review-info review }}
+        {{/each}}
+        {{else}}
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <p class="card-text">There aren't any reviews yet!</p>
+                        <p>Be the first person to leave us a review!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>

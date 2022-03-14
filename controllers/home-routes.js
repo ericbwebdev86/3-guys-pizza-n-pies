@@ -1,10 +1,20 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
+const { Review } = require('../models');
 
 // route to homepage view
 router.get('/', (req, res) => {
-    res.render('homepage', {
-        loggedIn: req.session.loggedIn
+    Review.findAll()
+    .then(reviewData => {
+        const reviews = reviewData.map(review => review.get({ plain: true }));
+
+        res.render('homepage', {
+            reviews,
+            loggedIn: req.session.loggedIn
+        });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     });
 });
 
