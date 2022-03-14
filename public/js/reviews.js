@@ -1,12 +1,12 @@
-async function commentHandler(event) {
+async function reviewHandler(event) {
     event.preventDefault();
-    const comment_text = document.querySelector('input[name="commentID"]').value.trim();
+    const review_text = document.querySelector('input[id="reviewID"]').value.trim();
     
-    if(comment_text) {
-        const response = await fetch('/api/comments', {
+    if(review_text) {
+        const response = await fetch('/api/reviews', {
             method: 'POST',
             body: JSON.stringify({ 
-                comment_text
+                review_text
              }),
             headers: {
                 'Content-Type': 'application/json'
@@ -19,4 +19,4 @@ async function commentHandler(event) {
         }
     }
 }
-document.querySelector('.comment-form').addEventListener('submit', commentHandler);
+document.querySelector('.review-form').addEventListener('submit', reviewHandler);

@@ -2,8 +2,12 @@
     <div class="col">
         <div class="card menu-card" style="width: 300px;">
             <div class="card-body">
-                <p class="card-text">{{review_text}}</p>
-                <p>{{customer.username}} on {{created_at}}</p>
+                <blockquote class="blockquote text-center">
+                    <p class="mb-0">"{{review_text}}"</p>
+                    <footer class="blockquote-footer">
+                        {{customer.username}} on {{format_date created_at}}
+                    </footer>
+                </blockquote>
             </div>
         </div>
     </div>
