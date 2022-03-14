@@ -20,9 +20,10 @@ const seedAll = async () => {
   console.log('\n----- REVIEWS SEEDED -----\n');
 
   await seedOrders();
-  await seedOrderProduct();
   console.log('\n----- ORDERS SEEDED -----\n');
 
+  await seedOrderProduct();
+  console.log('\n----- ORDERS SEEDED -----\n');
   process.exit(0);
 };
 
