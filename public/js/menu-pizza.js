@@ -9,7 +9,8 @@ for(let i = 0; i < productBtn.length; i ++) {
     })
 }
 function saveOrder() {
-    localStorage.setItem("productId", JSON.stringify(productArray));
+    let productObj = JSON.stringify(productArray);
+    localStorage.setItem("productId", JSON.stringify(productObj));
 };
 document.querySelector('pie-page-btn').addEventListener('click', saveOrder);
 
