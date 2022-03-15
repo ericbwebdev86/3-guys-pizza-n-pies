@@ -35,6 +35,13 @@
   row-gap: 20px;
 }
 
+.home-pg-box {
+  max-height: 40vh;
+}
+
+#reviews-container {
+  align-items: flex-end;
+}
 
 .navbar {
   background-color: rgba(0, 0, 0, 0.7);
