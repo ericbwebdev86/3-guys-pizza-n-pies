@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container item1">
     <div class="row justify-content-center">
         <div class="col-md-6 menu-card">
             <h3 class="margin-thirty">Hand tossed Pizzas &amp; Pies since 1996</h3>
@@ -7,9 +7,15 @@
     </div>
 </div>
 
-<div class="container" id="reviews-container">
+<div class="container item2" style="align-self: end;" id="reviews-container">
+    <div class="row justify-content-center">
+        <h3 class="text-centered">
+            What are people saying about us?
+        </h3>
+    </div>
+    
     {{#if loggedIn}}
-    <div class="row margin-thirty justify-content-center">
+    <div class="row margin-fifteen justify-content-center">
         <div class="col form-background">
             <form class="margin-fifteen review-form">
                 <div class="form-group">
@@ -25,7 +31,7 @@
     </div>
     {{/if}}
 
-    <div class="container flex justify-content-center margin-thirty">
+    <div class="container flex justify-content-center margin-fifteen">
         {{#if reviews.length}}
         {{#each reviews as |review|}}
         {{> review-info review }}
