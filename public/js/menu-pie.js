@@ -1,15 +1,22 @@
 //pie-page-btn
 //.product-btn
-let productBtn = document.querySelectorAll('.product-btn');
+let buttons = document.getElementsByTagName('button');
+let productArray = [];
 let products = localStorage.getItem("productId");
-let productArray = JSON.parse(products);
+productArray = JSON.parse(products);
+let reviewOrderBtn = document.querySelector('review-page-btn');
 
-for(let i = 0; i < productBtn.length; i ++) {
-    document.querySelector('.product-btn')[i].addEventListener('click', function addProducts() {
-        productArray.push(productBtn[i].value());
-    })
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = addProducts;
+  }
+  function addProducts() {
+    console.log(productArray);
+    console.log(this.id);
+    productArray.push(this.id);
+    console.log(productArray);
 }
-function buildOrder(event) {
+async function buildOrder(event) {
+    window.localStorage.clear();
     event.preventDefault();
     const response = await fetch('/api/orders', {
         method: 'POST',
@@ -21,10 +28,13 @@ function buildOrder(event) {
         }
     });
     if(response.ok) {
-        document.location.replace('/cart-page');
-        localStorage.clear();
+        document.location.replace('/review-order');
+        window.localStorage.clear();
     } else {
         alert(response.statusText);
     }
+    
 };
-document.querySelector('review-page-btn').addEventListener('click', buildOrder);
+if(reviewOrderBtn){
+    reviewOrderBtn.addEventListener('click', buildOrder);
+}
