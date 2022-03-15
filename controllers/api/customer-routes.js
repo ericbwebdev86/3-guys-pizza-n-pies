@@ -113,7 +113,7 @@ router.post('/login', (req, res) => {
             req.session.customer_id = customerData.id;
             req.session.email = customerData.email;
             req.session.loggedIn = true;
-
+            console.log(req.session.customer_id)
             res.json({ user: customerData, message: 'You are now logged in!' });
         });
     });

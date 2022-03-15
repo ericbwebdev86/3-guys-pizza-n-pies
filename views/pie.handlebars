@@ -122,7 +122,9 @@
         </div>
     </div>
     <div class=" row justify-content-center">
-        <a class="btn btn-dark order-nav-btn margin-thirty" href="/pizza">To The Pizza!</a>
-        <a class="btn btn-dark order-nav-btn margin-thirty review-order-btn" href="./cart-page.html">Review Order</a>
+        <a class="btn btn-dark order-nav-btn margin-thirty" href="/pizza">To The Pizzas!</a>
+        {{#if loggedIn}}
+        <a class="btn btn-dark order-nav-btn margin-thirty review-order-btn" href="/review-order">Review Order</a>
+        {{/if}}
     </div>
 </div>
