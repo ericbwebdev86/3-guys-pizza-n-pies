@@ -34,6 +34,20 @@
   grid-template-rows: auto minmax(0,1fr) auto;
   row-gap: 20px;
 }
+.grid-container {
+  display: grid;
+  row-gap: 10px;
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.item2 {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
 
 .home-pg-box {
   max-height: 40vh;
@@ -123,6 +137,7 @@ footer img {
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+  height:min-content
 }
 
 .text-align-right {
