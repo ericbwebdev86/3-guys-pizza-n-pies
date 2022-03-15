@@ -1,16 +1,17 @@
-//pie-page-btn
-//.product-btn
-let productBtn = document.querySelectorAll('.product-btn');
+aTags = document.getElementsByTagName('button');
 let productArray =[];
 
-for(let i = 0; i < productBtn.length; i ++) {
-    document.querySelector('.product-btn')[i].addEventListener('click', function addProducts() {
-        productArray.push(productBtn[i].value());
-    })
+for (let i = 0; i < aTags.length; i++) {
+    aTags[i].onclick = addProducts;
+  }
+function addProducts() {
+    console.log(this.id);
+    productArray.push(this.id);
+    console.log(productArray)
 }
 function saveOrder() {
     let productObj = JSON.stringify(productArray);
-    localStorage.setItem("productId", JSON.stringify(productObj));
+    localStorage.setItem("productId", productObj);
 };
-document.querySelector('pie-page-btn').addEventListener('click', saveOrder);
+document.querySelector('.pie-page-btn').addEventListener('click', saveOrder);
 

@@ -22,6 +22,7 @@ function buildOrder(event) {
     });
     if(response.ok) {
         document.location.replace('/cart-page');
+        localStorage.clear();
     } else {
         alert(response.statusText);
     }
