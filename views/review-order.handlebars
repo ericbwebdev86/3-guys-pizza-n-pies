@@ -1,0 +1,17 @@
+<script>
+    document.getElementById("body-main").classList.remove("background-one")
+    document.getElementById("body-main").classList.remove("background-two")
+    document.getElementById("body-main").classList.remove("background-three")
+    document.getElementById("body-main").classList.add("background-three")
+</script>
+
+<div class="container">
+    <div class="container form-background content">
+        {{#each orders as |order|}}
+        {{> order-info order }}
+        {{/each}}
+    </div>
+    <div class="row justify-content-center margin-thirty">
+        <a class="btn btn-dark order-nav-btn" href="./payment-portal.html">Payment Portal</a>
+    </div>
+</div>

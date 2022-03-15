@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Op } = require('sequelize');
 const sequelize = require('../config/connection');
-const { Review, Customer, Product } = require('../models');
+const { Review, Customer, Product, Order, OrderProduct } = require('../models');
 
 // route to homepage view
 router.get('/', (req, res) => {
@@ -69,6 +69,41 @@ router.get('/pie', (req, res) => {
     res.render('pie', {
         loggedIn: req.session.loggedIn
     });
+});
+
+// route to homepage view
+router.get('/review-order', (req, res) => {
+    Order.findAll({
+        limit: 1,
+        where: {
+            customer_id: req.session.customer_id
+        },
+        order: [['createdAt', 'DESC']],
+        attributes: ['id', 'total', 'order_status', 'created_at'],
+        include: [
+            {
+                model: Product,
+                attributes: ['id', 'product_name', 'price'],
+                through: OrderProduct,
+            },
+            {
+                model: Customer,
+                attributes: { exclude: ['password'] }
+            }
+        ]
+    })
+        .then(orderData => {
+            const orders = orderData.map(order => order.get({ plain: true }));
+
+            res.render('review-order', {
+                orders,
+                loggedIn: req.session.loggedIn
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 module.exports = router;
