@@ -22,16 +22,18 @@
 <body id="body-main" class="background-one">
     <header>
         <nav class="navbar">
-            <a href="/"><img id="logo" src="/images/likemeat-CbNAuxSZTFo-unsplash.jpg"
-                    alt="a pizza cut into 3 weird pieces" width="90" height="75"></a>
-            <h1>3 Guys Pizza-n-Pies</h1>
-            <div>
-                <a href="/menu" class="btn btn-dark">Menu</a>
-                {{#if loggedIn}}
-                <button id="logout" class="btn btn-dark">Logout</button>
-                {{else}}
-                <a href="/login" class="btn btn-dark">Login</a>
-                {{/if}}
+            <div class="container">
+                <a class="col-md" href="/"><img id="logo" src="/images/likemeat-CbNAuxSZTFo-unsplash.jpg"
+                        alt="a pizza cut into 3 weird pieces" width="90" height="75"></a>
+                <h1 class="col-md text-centered">3 Guys<br>Pizza-n-Pies</h1>
+                <div class="col-md d-flex justify-content-end">
+                    <a href="/menu" class="btn btn-dark margin-five">Menu</a>
+                    {{#if loggedIn}}
+                    <button id="logout" class="btn btn-dark margin-five">Logout</button>
+                 {{else}}
+                 <a href="/login" class="btn btn-dark margin-five">Login</a>
+                 {{/if}}
+                </div>
             </div>
         </nav>
     </header>
@@ -39,12 +41,29 @@
         {{{ body }}}
     </main>
 
-    <footer id="footer">
-        <img src="/images/likemeat-CbNAuxSZTFo-unsplash.jpg" alt="a pizza cut into 3 weird pieces" width="140"
-            height="125">
-        <h4>
-            Thanks for visiting!
-        </h4>
+    <footer id="footer" class="navbar justify-content-center">
+        <div class="container flex row justify-content-center">
+            <div class="col-md d-flex justify-content-start">
+                Located at: <br>
+                1234 N Main St.
+                Someplace, WI. 53535
+            </div>
+            <div class="col-md">
+                <img src="/images/likemeat-CbNAuxSZTFo-unsplash.jpg" alt="a pizza cut into 3 weird pieces"
+                    width="90" height="75">
+                <h6>
+                    Thanks for visiting!
+                </h6>
+            </div>
+            <div class="col-md d-flex justify-content-end">                
+                <div class="col-md">
+                    <h6>Contact Us</h6>
+                    <a href="https://ericbwebdev86.github.io/abn-dev-portfolio/">Eric Bates</a><br>
+                    <a href="https://ericbwebdev86.github.io/abn-dev-portfolio/">Preston Fassbender</a><br>
+                    <a href="https://ericbwebdev86.github.io/abn-dev-portfolio/">Matt Kolbach</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     {{#if loggedIn}}

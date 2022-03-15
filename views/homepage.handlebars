@@ -1,9 +1,13 @@
-<div>
-    3 Guys combines the freshest ingredients with our traditional Sicilian-Italian family recipes to serve the
-    finest in Italian cuisine.
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 menu-card">
+            <h3 class="margin-thirty">Hand tossed Pizzas &amp; Pies since 1996</h3>
+            <a class="btn btn-dark order-start-btn margin-fifteen" href="./menu-pizza.html">Order Now!</a>
+        </div>
+    </div>
 </div>
 
-<div class="container">
+<div class="container" id="reviews-container">
     {{#if loggedIn}}
     <div class="row margin-thirty justify-content-center">
         <div class="col form-background">
@@ -21,7 +25,7 @@
     </div>
     {{/if}}
 
-    <div class="container flex justify-content-center">
+    <div class="container flex justify-content-center margin-thirty">
         {{#if reviews.length}}
         {{#each reviews as |review|}}
         {{> review-info review }}
