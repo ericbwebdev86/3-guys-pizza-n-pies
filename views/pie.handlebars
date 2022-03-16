@@ -14,13 +14,13 @@
 <div class="container">
     {{#if loggedIn}}
     <style>
-        .product-btn {
+        .product-btn, .review-order-btn {
             pointer-events: inherit;
         }
     </style>
     {{else}}
     <style>
-        .product-btn {
+        .product-btn, .review-order-btn {
             pointer-events: none;
         }
     </style>
@@ -89,8 +89,8 @@
                             containing key lime juice. It comes with a side of our home made whipped cream to top it
                             off.
                         </p>
-                        <a id="36" class="btn btn-dark product-btn">Whole</a>
-                        <a id="37" class="btn btn-dark product-btn">Slice</a>
+                        <button id="36" class="btn btn-dark product-btn">Whole</button>
+                        <button id="37" class="btn btn-dark product-btn">Slice</button>
                     </div>
                 </div>
             </div>
@@ -129,9 +129,7 @@
     </div>
     <div class=" row justify-content-center">
         <a class="btn btn-dark order-nav-btn margin-thirty" href="/pizza">To The Pizzas!</a>
-        {{#if loggedIn}}
-        <a class="btn btn-dark order-nav-btn margin-thirty review-order-btn" href="/review-order">Review Order</a>
-        {{/if}}
+        <a class="btn btn-dark order-nav-btn margin-thirty review-order-btn" href="#">Review Order</a>
     </div>
 </div>
 <script src="/js/menu-pie.js"></script>

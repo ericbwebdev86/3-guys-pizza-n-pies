@@ -66,8 +66,10 @@ router.get('/:id', (req, res) => {
 // }
 router.post('/', withAuth, (req, res) => {
     Order.create(
-        req.body,
         {
+            total: req.body.total,
+            order_status: req.body.order_status,
+            orderedProductIds: req.body.orderedProductIds,
             customer_id: req.session.customer_id
         })
         .then((order) => {
