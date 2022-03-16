@@ -233,4 +233,14 @@ text-align: right;
     outline-width: 0
 }
 
-
+.hero {
+    text-align: center;
+    font-size: 40px;
+    text-shadow: 2px 2px black
+}
+.hero-big-text {
+    text-transform: uppercase;
+    font-size: 70px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
