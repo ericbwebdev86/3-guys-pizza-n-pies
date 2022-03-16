@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { Op } = require('sequelize');
 const sequelize = require('../config/connection');
 const { Review, Customer, Product, Order, OrderProduct } = require('../models');
 
@@ -79,11 +78,22 @@ router.get('/review-order', (req, res) => {
             customer_id: req.session.customer_id
         },
         order: [['createdAt', 'DESC']],
-        attributes: ['id', 'total', 'order_status', 'created_at'],
+        attributes: [
+            'id',
+            'total',
+            'order_status',
+            'created_at',
+            //[sequelize.fn('sum', sequelize.col('price')), 'total_cost']
+        ],
         include: [
             {
                 model: Product,
-                attributes: ['id', 'product_name', 'price'],
+                attributes: [
+                    'id',
+                    'product_name',
+                    'price',
+                    // [sequelize.fn('sum', sequelize.col('price')), 'total_cost']
+                ],
                 through: OrderProduct,
             },
             {
