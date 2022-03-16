@@ -24,6 +24,7 @@ The aim of this project was to work in as a team and create a full-stack applica
 * bcrypt
 * express session
 * connect session sequelize
+* loadingbar.js
 
 with a focus on full stack development following the MVC paradigm
 

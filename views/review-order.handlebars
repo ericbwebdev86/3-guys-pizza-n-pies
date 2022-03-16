@@ -4,6 +4,11 @@
     document.getElementById("body-main").classList.remove("background-three")
     document.getElementById("body-main").classList.add("background-three")
 </script>
+{{#if loggedIn}}
+<div class="container">
+    <div class="ldBar w-100 label-center" data-value="100" data-aspect-ratio="none"></div>
+</div>
+{{/if}}
 
 <div class="container">
     <div class="container form-background content">
