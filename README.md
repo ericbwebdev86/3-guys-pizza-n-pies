@@ -40,7 +40,7 @@ Initialize the database in mysql using the following commands
 
 Quit out of mysql and return to the root directory of this project. type in the command **npm run seed** to populate the database
 
-## Usage
+## Use
 Navigate to the root directory in the terminal and type **npm start** to run the project
 
 Navigate to http://localhost:3001/ in your browser
@@ -100,3 +100,5 @@ THEN I cannot click to order any of the items
 THEN I am able to select items to be added to my order
 * WHEN I select to review my order 
 THEN I am presented with a page listing the food items I want to order
+* WHEN I click through the order process
+THEN there is a progress bar that fills up each step of the way
