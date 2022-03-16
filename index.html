@@ -11,31 +11,53 @@
     <link rel="stylesheet" href="./public/stylesheets/style.css">
 </head>
 
-<body id="body-index">
+<body id="body-main" class="background-one">
     <header>
         <nav class="navbar">
-            <a href="./index.html"><img id="logo" src="./public/images/likemeat-CbNAuxSZTFo-unsplash.jpg"
-                    alt="a pizza cut into 3 weird pieces" width="90" height="75"></a>
-            <h1>3 Guys Pizza-n-Pies</h1>
-            <div>
-                <a class="btn btn-dark" href="./menu-page.html">Menu</a>
-                <a class="btn btn-dark" href="./register-page.html">Login / Register</a>
+            <div class="container">
+                <a class="col-md" href="./index.html"><img id="logo"
+                        src="./public/images/likemeat-CbNAuxSZTFo-unsplash.jpg" alt="a pizza cut into 3 weird pieces"
+                        width="90" height="75"></a>
+                <h1 class="col-md text-centered">3 Guys<br>Pizza-n-Pies</h1>
+                <div class="col-md d-flex justify-content-end">
+                    <a class="btn btn-dark" href="./menu-page.html">Menu</a>
+                    <a class="btn btn-dark" href="./register-page.html">Login / Register</a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <div>
-        3 Guys combines the freshest ingredients with our traditional Sicilian-Italian family recipes to serve the
-        finest in Italian cuisine.
+    <div class="container flex justify-content-center margin-thirty">
+        <div class="col-md-6 menu-card">
+            <h3 class="margin-thirty">Hand tossed Pizzas &amp; Pies since 1996</h3>
+            <a class="btn btn-dark order-start-btn margin-fifteen" href="./menu-pizza.html">Order Now!</a>
+        </div>
     </div>
 
 
-    <footer id="footer">
-        <img src="./public/images/likemeat-CbNAuxSZTFo-unsplash.jpg" alt="a pizza cut into 3 weird pieces" width="140"
-            height="125">
-        <h4>
-            Thanks for visiting!
-        </h4>
+    <footer id="footer" class="navbar justify-content-center">
+        <div class="container flex row justify-content-center">
+            <div class="col-md d-flex justify-content-start">
+                Located at: <br>
+                1234 N Main St.
+                Someplace, WI. 53535
+            </div>
+            <div class="col-md">
+                <img src="./public/images/likemeat-CbNAuxSZTFo-unsplash.jpg" alt="a pizza cut into 3 weird pieces"
+                    width="90" height="75">
+                <h6>
+                    Thanks for visiting!
+                </h6>
+            </div>
+            <div class="col-md d-flex justify-content-end">
+                <div class="col-md">
+                    <h6>Contact Us</h6>
+                    <a href="https://ericbwebdev86.github.io/abn-dev-portfolio/">Eric Bates</a><br>
+                    <a href="https://ericbwebdev86.github.io/abn-dev-portfolio/">Preston Fassbender</a><br>
+                    <a href="https://ericbwebdev86.github.io/abn-dev-portfolio/">Matt Kolbach</a>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

@@ -1,0 +1,32 @@
+<script>
+    document.getElementById("body-main").classList.remove("background-one")
+    document.getElementById("body-main").classList.remove("background-two")
+    document.getElementById("body-main").classList.remove("background-three")
+    document.getElementById("body-main").classList.add("background-two")
+</script>
+
+<div class="container flex justify-content-center">
+    <div class="col-lg margin-fifteen">
+        <div class="col login-page my-2 py-2">
+            <form class="margin-five login-form">
+                <div class="form-row justify-content-center">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                </div>
+                <div class="text-centered padding-ten">
+                    <button type="submit" class="btn btn-dark">Sign in</button>
+                    <br/>
+                    <a href="/register">Don't have an account? Register here</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/login.js"></script>

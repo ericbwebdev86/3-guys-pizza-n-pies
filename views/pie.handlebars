@@ -1,0 +1,135 @@
+<script>
+    document.getElementById("body-main").classList.remove("background-one")
+    document.getElementById("body-main").classList.remove("background-two")
+    document.getElementById("body-main").classList.remove("background-three")
+    document.getElementById("body-main").classList.add("background-three")
+</script>
+
+{{#if loggedIn}}
+<div class="container">
+    <div class="ldBar w-100 label-center" data-value="66" data-aspect-ratio="none"></div>
+</div>
+{{/if}}
+
+<div class="container">
+    {{#if loggedIn}}
+    <style>
+        .product-btn, .review-order-btn {
+            pointer-events: inherit;
+        }
+    </style>
+    {{else}}
+    <style>
+        .product-btn, .review-order-btn {
+            pointer-events: none;
+        }
+    </style>
+    <div class="row justify-content-center margin-thirty">
+        <a class="btn btn-dark order-nav-btn" href="/login">Log in to order</a>
+    </div>
+    {{/if}}
+    <div class="container flex justify-content-center">
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pumpkin Pie</h5>
+                        <p class="card-text">
+                            Enjoy the dense, smooth, and almost fruity, starchy-sweet flavor of the pumpkin blending
+                            with the brown sugar sweetness combining with a whiff of sweet fragrance from cinnamon and
+                            nutmeg, while the ginger and cloves help set off the richness of this North American
+                            original pie.
+                        </p>
+                        <button id="30" class="btn btn-dark product-btn">Whole</button>
+                        <button id="31" class="btn btn-dark product-btn">Slice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pecan Pie</h5>
+                        <p class="card-text">
+                            Crunchy pecans surrounded by a sweet, rich, and sticky filling in a flaky pie crust. Comes
+                            with a side of home made whipped cream.
+                        </p>
+                        <button id="32" class="btn btn-dark product-btn">Whole</button>
+                        <button id="33" class="btn btn-dark product-btn">Slice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Apple Pie</h5>
+                        <p class="card-text">
+                            Our double-crusted apple pies are made fresh daily using only the freshest tart Wisconsin
+                            apples and cinnamon. Finished by drizzling the crispy, flaky crust with caramel.
+                        </p>
+                        <button id="34" class="btn btn-dark product-btn">Whole</button>
+                        <button id="35" class="btn btn-dark product-btn">Slice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Key Lime Pie</h5>
+                        <p class="card-text">
+                            This pie starts with a graham-cracker crust. It is then filled with a yellow custard
+                            containing key lime juice. It comes with a side of our home made whipped cream to top it
+                            off.
+                        </p>
+                        <button id="36" class="btn btn-dark product-btn">Whole</button>
+                        <button id="37" class="btn btn-dark product-btn">Slice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">French Silk Pie</h5>
+                        <p class="card-text">
+                            Our French Silk Pie features a cookie crust, rich and creamy chocolate filling, and is
+                            topped with homemade whipped cream and chocolate shavings.
+                        </p>
+                        <button id="38" class="btn btn-dark product-btn">Whole</button>
+                        <button id="39" class="btn btn-dark product-btn">Slice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pie of the Week</h5>
+                        <p class="card-text">
+                            Ask us about our weekly pie choice.
+                        </p>
+                        <button id="40" class="btn btn-dark product-btn">Whole</button>
+                        <button id="41" class="btn btn-dark product-btn">Slice</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" row justify-content-center">
+        <a class="btn btn-dark order-nav-btn margin-thirty" href="/pizza">To The Pizzas!</a>
+        <a class="btn btn-dark order-nav-btn margin-thirty review-order-btn" href="#">Review Order</a>
+    </div>
+</div>
+<script src="/js/menu-pie.js"></script>

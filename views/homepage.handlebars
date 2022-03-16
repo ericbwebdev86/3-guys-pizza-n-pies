@@ -1,0 +1,59 @@
+<div class="container item1">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="hero">
+                <div>Hand-Tossed</div>
+                <div class="hero-big-text">Pizzas &amp; Pies</div>
+                <div>since 1996</div>
+            </div>
+        </div>
+        <a class="btn btn-dark order-start-btn margin-fifteen" href="/pizza">Order Now!</a>
+    </div>
+</div>
+
+<div class="container item2" style="align-self: end;" id="reviews-container">
+    <div class="row justify-content-center">
+        <h3 class="text-centered">
+            What are people saying about us?
+        </h3>
+    </div>
+
+    {{#if loggedIn}}
+    <div class="row margin-fifteen justify-content-center">
+        <div class="col form-background">
+            <form class="margin-fifteen review-form">
+                <div class="form-group">
+                    <label for="reviewID">Enter a Review</label>
+                    <input type="text" class="form-control" id="reviewID" placeholder="Let us know how we are doing.">
+                </div>
+                <div class="text-centered">
+                    <button type="submit" class="btn btn-dark">Submit Review</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="container flex justify-content-center margin-fifteen">
+        {{#if reviews.length}}
+        {{#each reviews as |review|}}
+        {{> review-info review }}
+        {{/each}}
+        {{else}}
+        <div class="row no-gutters margin-five">
+            <div class="col">
+                <div class="card menu-card" style="width: 300px;">
+                    <div class="card-body">
+                        <p class="card-text">There aren't any reviews yet!</p>
+                        <p>Be the first person to leave us a review!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+{{#if loggedIn}}
+<script src="/js/reviews.js"></script>
+{{/if}}
