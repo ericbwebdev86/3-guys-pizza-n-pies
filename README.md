@@ -9,6 +9,9 @@ The aim of this project was to work in as a team and create a full-stack applica
 [Testing](#tests) <br>
 [Media](#media) <br>
 [Contact and Questions](#questions) <br>
+[License](#license) <br>
+[User Story](#user-story) <br>
+[Acceptance Criteria](#acceptance-criteria) <br>
   
 
 ## Technologies Used
@@ -49,13 +52,13 @@ Navigate to http://localhost:3001/ in your browser
 There are no formal tests for this project
 
 ## Media
--- screenshots go here --
+[Link to the demo video](https://youtu.be/2oOYPbXrknI)
 
 The following link is to this project's github repository
 https://github.com/ericbwebdev86/3-guys-pizza-n-pies
 
 The following link is to this project's live website
---heroku site goes here -- 
+[Link to Heroku site](https://agile-bastion-05286.herokuapp.com/)
 
 ## Questions
 Any questions feel free to contact us via our githubs or by sending any of us an email. <br/>
